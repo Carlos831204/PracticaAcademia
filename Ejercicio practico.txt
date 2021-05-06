@@ -213,6 +213,18 @@ void variablesVar(){
     print( 'este es un numero' );
   }
 }
+
+void usoForEach(){
+    var list = ['apples', 'bananas', 'oranges'];
+  list.forEach((item){
+    print ('la fruta es ${item}');
+  });
+  
+  for(int index=0; index<list.length; index++){
+    print ('la fruta desde un for es: ${list[index]}');
+  }
+}
+
 void main() {
   Vehiculo nuevo = new Vehiculo(4, 6,'ultimo modelo','marca nueva'); 
   variablesParametros();
@@ -228,6 +240,7 @@ void main() {
   factorial();
   variablesVar();
   usoDynamic();
+  usoForEach();
   print( compareToDateNowasString('2020-11-20') );
   print( compareToDateNowasString('2022-09-01') );
   print( compareToDateNowasStringTwo('2020-11-20'));
