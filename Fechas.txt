@@ -1,0 +1,37 @@
+class Eiffel{
+  int diaActual=0;
+  int mesActual=0;
+  int anoActual=0;
+}
+
+void fechaDia(){
+  int diaActual = DateTime.now().day;
+  print( "El día correspondiente a la fecha es: $diaActual" );  
+}
+
+void fechaMes(){
+  int mesActual = DateTime.now().month;
+  print( "El mes correspondiente a la fecha es: $mesActual" );  
+}
+
+void fechaAno(){
+  int anoActual = DateTime.now().year;
+  print( "El año correspondiente a la fecha es: $anoActual" );  
+}
+
+void cadenaFecha(){
+  DateTime fechaActual = DateTime.now();
+  print ( fechaActual.toString());
+}
+
+void fechaExtendida(){
+  
+}
+
+void main() {
+  Eiffel fecha = new Eiffel();
+  fecha.cadenaFecha();
+  fecha.fechaDia();
+  fecha.fechaMes();
+  fecha.fechaAno();
+}

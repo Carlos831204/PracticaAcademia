@@ -1,0 +1,64 @@
+class Racional{
+  
+  int n1=0;
+  int n2=0;
+  
+  void setN1(int n1){
+    this.n1 = n1;
+  }
+  
+  void setN2(int n2){
+    this.n2 = n2;
+  }
+  
+  int getN1(){
+    return n1;
+  }
+  
+  int getN2(){
+    return n2;
+  }
+  
+  Racional simplificar(){
+    int i = 2;
+    while((i < 1000) && i <=getN1() && i <= getN2()){
+      if((getN1() % i == 0) && (getN2() % i == 0)){
+        setN1(getN1()/ i);
+        setN2(getN2()/i);
+        i = 2;
+      }else {
+        i++;
+      }
+    }
+    return this;
+  }
+  
+  Racional (int n1, int n2){
+    this.n1 = n1;
+    if(n2!=0){
+      this.n2 = n2;
+    }else {
+      print("El denominador no puede ser cero");
+    }
+    
+    Racional simplificaValores = simplificar();
+    this.n1 = simplificaValores.getN1();
+    this.n2 = simplificaValores.getN2();
+  }
+  
+  Racional suma(Racional n2){
+    return new Racional(getN1()* n2.getN2() + n2.getN1() * getN2(), getN2() * n2.getN2()).simplificar();
+  }
+  
+  Racional resta(Racional n2){
+    return new Racional(getN1()* n2.getN2() - n2.getN1() * getN2(), getN2() * n2.getN2()).simplificar();
+  }
+    
+}
+
+void main(){
+  Racional opera1 = new Racional(10, 5);
+  Racional opera2 = new Racional(7, 10);
+  print(opera1.suma(opera2).toString());
+  print(opera1.resta(opera2).toString());
+}

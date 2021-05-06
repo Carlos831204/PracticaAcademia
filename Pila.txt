@@ -1,0 +1,17 @@
+class Eiffel{
+  List<int> numeros = [];
+  
+  void agregarNumeros(){
+    numeros.add(10);
+    numeros.add(25);
+    numeros.add(38);
+    numeros.add(90);
+    numeros.add(120);
+    print (numeros);
+  }
+}
+
+void main(){
+  Eiffel datos = new Eiffel();
+  datos.agregarNumeros();
+}
